@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Page</title>
+</head>
+<body>
+	<a href="/landing">Home</a> | <a href="/logout">Logout</a>
+	<h3>Fill out a form to add to a new item to the list</h3>
+	{{current_user.id}}
+	<form action="/create" method="POST">
+		{% csrf_token %}
+		<label>Item/Product</label>
+		<input type="text" name="product">
+		<input type="hidden" name="poster" value="{{current_user.id}}">
+		<input type="submit" name="submit" value="Add">
+
+		
+	</form>
+		
+
+</body>
+</html>
